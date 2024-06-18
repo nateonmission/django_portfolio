@@ -23,7 +23,8 @@ urlpatterns = [
     path('projects/', projects, name='projects'),
     path('open_source/', open_source, name='open_source'),
     path('resume/', resume, name='resume'),
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls, name='admin'),
     path('', include('products.urls')),
+    path('', include('theblog.urls')),
 ]
 

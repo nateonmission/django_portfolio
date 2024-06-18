@@ -20,6 +20,16 @@
         </div>
         <ul class="nav">
             <li class="nav">
+                {% if user.is_authenticated %}
+                    <a href="/admin" id="admin" 
+                    {% if request.path == '/admin/' %} 
+                        class="menu active"
+                    {% else %}
+                        class="menu"
+                    {% endif %}
+                    >⚡</a>
+                {% endif %}
+
                 <a href="{% url 'home' %}" id="home" 
                 {% if request.path == '/' %} 
                     class="menu active"
@@ -66,9 +76,9 @@
     <div class="footer">
         <div class="socials">
 
-            <a class="socials" href="https://github.com/nateontechnology" target="_blank">GITHUB</a>
+            <a class="socials" href="https://github.com/nateonmission" target="_blank">GITHUB</a>
         
-            <a class="socials" href="https://blog.nateontechnology.com" target="_blank">MY&nbsp;BLOG</a>
+            <a class="socials" href="blog_home/" target="_blank">MY&nbsp;BLOG</a>
         
             <a class="socials" href="https://www.linkedin.com/in/nateontechnology" target="_blank">LINKEDIN</a>
         
