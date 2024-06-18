@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;1,400;1,700&family=Workbench&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+
+    --light-bg-color: rgba(0, 255, 0, 0.5);
+    --dark-bg-color:rgba(0, 100, 0, 0.5);
+    --primary-color: green;
+    --accent-color: #fcad38;
+    --shadow-color: rgba(0, 192, 0, 0.5);
+    --black: #002000;
+    padding: 0;
+    margin: 0;
+    
+}
+
+body {
+    background-color: var(--black);
+    background-image: radial-gradient(rgba(var(--dark-bg-color)), black 120%);
+    width: 100%;
+    height: 100vh;
+    font: 1.5rem 'Space Mono', Inconsolata, monospace;
+    text-shadow: 0 0 2px rgb(var(--light-color));
+    color: var(--primary-color);
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    justify-content: space-between;
+    align-content: center;
+    /* flex-grow: 1; */
+    }
+
+    body::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: repeating-linear-gradient(
+            0deg,
+            rgba(0,0,0, 0.15),
+            rgba(0,200,0, 0.150) 1px,
+            transparent 1px,
+            transparent 2px
+        );
+        pointer-events: none;
+        z-index: 13;
+        padding: 0;
+        margin:0 ;
+    }
+    
+    ::selection {
+        background-color: rgb(50, 190, 50);
+        color: rgb(0, 100, 0);
+    }
+
+nav.nav {
+        width: 100%;
+        background-color: var(--light-bg-color);
+        color: var(--black);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+        padding: 0;
+        flex-wrap: wrap;
+}
+    
+ul.nav {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        padding:0 0 1rem 0;
+        margin: 0;
+}
+
+div.banner {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items:baseline;
+    flex-wrap: wrap;
+    padding:0 0 0 0;
+    margin: 1rem 0 -0.5rem 0;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+div.banner span {
+    font-family: 'Workbench', Courier, monospace;
+    font-size: 2rem;
+    padding:0 1rem 0.5rem 1rem;
+    margin: 0 1rem -0.5rem 0;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+    
+a, a:visited {
+        border: none;
+        color: var(--accent-color);
+}
+
+a:hover {
+    color: var(--primary-color);
+}
+
+
+    
+a.menu {
+        text-decoration: none;
+        background-color: var(--dark-bg-color);
+        color: var(--black);
+        padding:0.5rem 1rem 1.5rem 1rem;
+        margin: 0.5rem 0.5rem -1rem 0.5rem;
+        font-size: 1.5rem;
+        font-family: 'Workbench', sans-serif;
+}
+    
+a.active {
+        text-decoration: none;
+        color: var(--light-bg-color);
+        background-color: var(--black);
+        padding:0.5rem 1rem 1.5rem 1rem;
+        margin: 0.5rem 0.5rem -1rem 0.5rem;
+        font-family: 'Workbench', sans-serif;
+}
+    
+a.menu:hover {
+        text-decoration: none;
+        color: var(--light-bg-color);
+        background-color: var(--black);
+        padding:0.5rem 1rem 1.5rem 1rem;
+        margin: 0.5rem 0.5rem -1rem 0.5rem;
+}
+
+main {
+    margin: 0 1REM;
+    z-index: 0;
+}
+
+div.frame {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: center;
+    flex-wrap: nowrap;
+    min-height: 8rem;
+    margin: 0.5rem ;
+    width: 95%;
+    padding: 0.5rem 3rem;
+    /* overflow: hidden; */
+    overflow-y:auto;
+    z-index: 0;
+}
+
+div.content {
+    display: inline;
+    width: 70%;
+    z-index: 0;
+}
+
+
+
+/* #container {
+    min-width: 8rem;
+    min-height: 7rem;
+    z-index: 2;
+    display: inline;
+}
+
+#container:hover {
+    min-width: 8rem;
+    min-height: 7rem;
+    z-index: 10;
+    display: inline;
+} */
+
+/* #outer_picture_frame {
+    flex-grow: 3;
+    width: 8rem;
+    height: 6rem;
+    display: inline; 
+    z-index: 2;
+} */
+
+#inner_picture_frame {
+    background: url('../images/me_gmc.png') rgba(1, 109, 10, 0.2);
+    background-blend-mode: multiply;
+    margin: 0 1REM 0 0;
+    display: inline; 
+    width: 14rem;
+    height: 10rem;
+    background-position: center;
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    border: double var(--primary-color) 12px;
+    z-index: 2;
+
+
+}
+
+#inner_picture_frame:hover {
+    background-image: url('../images/me_color.jpg');
+    background-blend-mode: unset;
+    width: 14rem;
+    height: 10rem;
+    background-position: center;
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    /* animation-name: scale-in2;
+    animation-duration: 2s; */
+    /* transition: transform 2sec; */
+    z-index: 2;
+    
+}
+
+.overlay {
+    padding:0;
+    margin:0;
+    width: 6rem;
+    height: 6rem;
+    background-color: rgba(3, 253, 78, 0.2);
+}
+.overlay:hover {
+    padding:0;
+    margin:0;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+@keyframes scale-in1 {
+    100% {
+        width: 14;
+        height: 10;
+    }
+    0% {
+        width: 8rem;
+        height: 6rem;
+    }
+}
+
+@keyframes scale-in2 {
+    0% {
+        width: 8rem;
+        height: 6rem;
+    }
+
+
+
+    100% {
+        width: 14rem;
+        height: 10rem;
+    }
+}
+
+
+div.footer {
+    content: '';
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-self: flex-end;
+    width: 100%;
+    padding:0.5rem;
+    margin:0;
+    background-color: var(--light-bg-color);
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    /* border: #fcad38 solid 1px; */
+}
+
+div.socials {
+    padding:0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+a.socials {
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-align: center;
+    width: 12rem;
+    color: rgb(0, 54, 0);
+    background-color: green;
+    text-decoration: none;
+    font-family: 'Workbench', Courier, monospace;
+    border: 12px rgb(0, 54, 0) double;
+    padding: 0.5rem 0.5rem;
+    margin: 0 0.5rem;
+}
+
+a.socials:hover {
+    font-weight: 400;
+    font-size: 1.5rem;
+    text-align: center;
+    width: 12rem;
+    color:green;
+    background-color:  rgb(0, 54, 0);
+    text-decoration: none;
+    border: 12px green double;
+    padding: 0.5rem 0.5rem;
+    margin: 0 0.5rem;
+}
+

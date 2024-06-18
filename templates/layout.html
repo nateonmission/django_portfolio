@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <script src="{% static 'js/main.js' %}" defer></script>
+    <title>
+        {% block title %}
+            The Hillbilly Coder
+        {% endblock %}
+    </title>
+</head>
+<body>
+    <nav class="nav">
+        <div class="banner">
+            <!-- <img src="" class="icon" alt="My Icon"> -->
+            <span>Nathan Allen</span>
+        </div>
+        <ul class="nav">
+            <li class="nav">
+                <a href="{% url 'home' %}" id="home" 
+                {% if request.path == '/' %} 
+                    class="menu active"
+                {% else %}
+                    class="menu"
+                {% endif %}
+                >HOME</a>
+            </li>
+            <li class="nav">
+                <a href="/projects" id="demos"
+                {% if request.path == '/projects/' %} 
+                    class="menu active"
+                {% else %}
+                    class="menu"
+                {% endif %} 
+                >MY PROJECTS</a>
+            </li>
+            <li class="nav">
+                <a href="/open_source" id="os"
+                {% if request.path == '/open_source/' %} 
+                    class="menu active"
+                {% else %}
+                    class="menu"
+                {% endif %} 
+                >OPEN SOURCE</a>
+            </li>      
+            <li class="nav">
+                <a href="/resume" id="resume"
+                {% if request.path == '/resume/' %} 
+                    class="menu active"
+                {% else %}
+                    class="menu"
+                {% endif %} 
+                >RESUME</a>
+            </li>                                  
+        </ul>
+    </nav>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <div class="footer">
+        <div class="socials">
+
+            <a class="socials" href="https://github.com/nateontechnology" target="_blank">GITHUB</a>
+        
+            <a class="socials" href="https://blog.nateontechnology.com" target="_blank">MY&nbsp;BLOG</a>
+        
+            <a class="socials" href="https://www.linkedin.com/in/nateontechnology" target="_blank">LINKEDIN</a>
+        
+            <a class="socials" href="https://x.com/nateontech8086" target="_blank">X</a>
+
+        </div>
+        <!-- <div class="badges">
+            <img src="https://img.shields.io/badge/Python-005500?style=for-the-badge&logo=python&logoColor=00ff00">
+            <img src="https://img.shields.io/badge/FastAPI-005500?style=for-the-badge&logo=fastapi&logoColor=00ff00">
+            <img src="https://img.shields.io/badge/Java-005500?style=for-the-badge&logo=openjdk&logoColor=00ff00">
+            <img src="https://img.shields.io/badge/Spring-005500?style=for-the-badge&logo=spring&logoColor=00ff00">
+            <img src="https://img.shields.io/badge/Node.js-005500?style=for-the-badge&logo=node.js&logoColor=00ff00">
+            <img src="https://img.shields.io/badge/PostgreSQL-005500?style=for-the-badge&logo=postgresql&logoColor=00ff00">
+            <img src="https://img.shields.io/badge/MySQL-005500?style=for-the-badge&logo=mysql&logoColor=00ff00">
+            <img src="https://img.shields.io/badge/GIT-005500?style=for-the-badge&logo=git&logoColor=00ff00">
+            <img src="https://img.shields.io/badge/Amazon_AWS-005500?style=for-the-badge&logo=amazonaws&logoColor=00ff00">
+            <img src="https://img.shields.io/badge/Linux-005500?style=for-the-badge&logo=linux&logoColor=00ff00">
+        </div> -->
+    </div>
+    
+</body>
+</html>
